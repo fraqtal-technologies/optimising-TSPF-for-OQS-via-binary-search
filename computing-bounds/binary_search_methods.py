@@ -1,6 +1,6 @@
 import numpy as np
 
-def binarySearch(low,high,erorr_function,epsilon,**kwargs):
+def binary_search(low,high,erorr_function,epsilon,**kwargs):
     high = high
     low = 1
     #mid = int(np.ceil((high+low)/2))
