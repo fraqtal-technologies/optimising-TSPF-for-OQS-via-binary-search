@@ -50,3 +50,6 @@ MANIFEST
 .Trashes
 ehthumbs.db
 Thumbs.db 
+
+# Local drafting guides (excluded from GitHub sync)
+guides/

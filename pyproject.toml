@@ -1,0 +1,19 @@
+[project]
+name = "optimising-tspf-for-oqs-via-binary-search"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "cvxopt==1.3.2",
+    "cvxpy==1.6.6",
+    "cython==3.1.2",
+    "filelock==3.18.0",
+    "matplotlib==3.10.3",
+    "numpy==1.26.0",
+    "packaging==25.0",
+    "pip==25.1.1",
+    "qutip==5.2.0",
+    "scipy==1.16.0",
+    "setuptools==80.9.0",
+]

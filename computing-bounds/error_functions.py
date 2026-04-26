@@ -1,19 +1,13 @@
 import numpy as np
 
-def first_order_error(t,M,Omega,N):
-    
-    error = (t*Omega*M)**3
-    error = error/(N**2)
-    error = error*np.exp((t*Omega*M)/N)
-    
-    return error
+def epsilon_hat_det1(t, lam, M, N):
+    return (t * lam * M)**2 / N * np.exp(t * lam * M / N)
 
-def second_order_error(t,M,Omega,N):
-    
-    error = (t*Omega)**3
-    error *= M**2
-    error = error/(N**2)
-    error = error*np.exp((t*Omega*M)/N)
-    
-    return error
+def epsilon_hat_ran1(t, lam, M, N):
+    return (t * lam * M)**3 / (3 * N**2) * np.exp(t * lam * M / N)
 
+def epsilon_hat_det2(t, lam, M, N):
+    return (t * lam * M)**3 / (3 * N**2) * np.exp(t * lam * M / N)
+
+def epsilon_hat_ran2(t, lam, M, N):
+    return (t * lam)**3 * M**2 / N**2 * np.exp(t * lam * M / N)
