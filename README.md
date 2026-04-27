@@ -61,12 +61,14 @@ Outputs:
 ```bash
 uv run python plot_fig2.py
 uv run python plot_fig3.py
+uv run python plot_tfim_couplings.py
 ```
 
 Outputs:
 
 - `results/figures/fig2.png`
 - `results/figures/fig3.png`
+- `results/figures/tfim_couplings.png`
 
 ### 4) (Optional) Recompute lambda diagnostics
 
