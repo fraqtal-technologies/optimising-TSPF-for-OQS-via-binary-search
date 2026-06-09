@@ -9,14 +9,14 @@ from matplotlib.ticker import LogLocator, LogFormatterSciNotation
 
 ROOT = os.path.dirname(__file__)
 RESULTS_PATH = os.path.join(ROOT, "results", "data", "results_tfim.json")
-OUTPUT_PATH = os.path.join(ROOT, "results", "figures", "fig3.png")
+OUTPUT_PATH = os.path.join(ROOT, "results", "figures", "Fig3.png")
 REFERENCE_M_VALUES = [5, 8, 12, 15, 19]
 TITLE_FONTSIZE = 18
 LABEL_FONTSIZE = 16
 TICK_FONTSIZE = 13
 LEGEND_FONTSIZE = 11
 PANEL_LABEL_FONTSIZE = 20
-Y_AXIS_LABEL = r"Trotter steps $N$ and gate complexity $g$ (log scale)"
+Y_AXIS_LABEL = r"Trotter Steps $N$ and Gate Complexity $g$ (Log Scale)"
 
 
 def _extract_series(rows, method_key, value_key):
@@ -85,7 +85,7 @@ def _plot_method_subplot(ax, rows, method_key, title):
     )
 
     ax.set_title(title, fontsize=TITLE_FONTSIZE)
-    ax.set_xlabel("Number of Liouvillian terms, $M$", fontsize=LABEL_FONTSIZE)
+    ax.set_xlabel("Number of Liouvillian Terms, $M$", fontsize=LABEL_FONTSIZE)
     ax.set_xticks(m_values)
     ax.tick_params(axis="both", labelsize=TICK_FONTSIZE)
 
@@ -140,10 +140,12 @@ def main():
     fig.savefig(OUTPUT_PATH, dpi=300)
 
     print(f"Wrote {OUTPUT_PATH}")
+    params = payload["params"]
     print(
         "The number of Trotter steps, N, and gate complexities, g, required by each method "
         "for the transverse-field Ising model with varying M, the number of terms in the "
-        "model's Liouvillian generator. Parameters: lambda = 4.00, epsilon = 10^-5, t = 5."
+        f"model's Liouvillian generator. Parameters: lambda = {params['lam']:.4f}, "
+        f"epsilon = {params['epsilon']:g}, t = {params['t']:g}."
     )
 
 

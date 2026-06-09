@@ -24,6 +24,11 @@ from error_functions import (  # noqa: E402
     epsilon_hat_ran2,
 )
 from models.tfim_lattice import _LATTICE_PAIRS  # noqa: E402
+from compute_lambda import (  # noqa: E402
+    build_local_matrices_xx,
+    build_local_matrices_tfim,
+    compute_lambda,
+)
 
 
 def _gate_complexities(M, N, second_order):
@@ -73,7 +78,12 @@ def _record_method_results(t, lam, M, epsilon):
 def compute_xx_results():
     t = 2.0
     epsilon = 1e-3
-    lam = 8.119
+    # lambda = max_k ||L_k||_diamond via the Nechita et al. CJ-matrix bound.
+    # All terms are 1- or 2-local, so lambda is independent of chain length P.
+    Omega, gamma = 3.94, 0.31
+    lam = compute_lambda(
+        build_local_matrices_xx(P=2, Omega=Omega, gamma=gamma), verbose=False
+    )
     p_values = [2, 3, 4, 5, 6, 7, 8]
     m_values = [2 * p + 3 for p in p_values]
 
@@ -89,7 +99,7 @@ def compute_xx_results():
 
     return {
         "model": "xx_spin_chain",
-        "params": {"t": t, "epsilon": epsilon, "lam": lam, "Omega": 3.94, "gamma": 0.31},
+        "params": {"t": t, "epsilon": epsilon, "lam": lam, "Omega": Omega, "gamma": gamma},
         "rows": rows,
     }
 
@@ -97,7 +107,12 @@ def compute_xx_results():
 def compute_tfim_results():
     t = 5.0
     epsilon = 1e-5
-    lam = 4.00
+    # lambda = max_k ||L_k||_diamond via the Nechita et al. CJ-matrix bound.
+    # All terms are 1- or 2-local, so lambda is independent of system size.
+    J, h, gamma = 1.0, 0.5, 0.1
+    lam = compute_lambda(
+        build_local_matrices_tfim(n_spins=2, J=J, h=h, gamma=gamma), verbose=False
+    )
     n_spins_values = [2, 3, 4, 5, 6]
     m_values = [len(_LATTICE_PAIRS[n]) + 2 * n for n in n_spins_values]
 
@@ -113,7 +128,7 @@ def compute_tfim_results():
 
     return {
         "model": "tfim_lattice",
-        "params": {"t": t, "epsilon": epsilon, "lam": lam, "J": 1.0, "h": 0.5, "gamma": 0.1},
+        "params": {"t": t, "epsilon": epsilon, "lam": lam, "J": J, "h": h, "gamma": gamma},
         "rows": rows,
     }
 

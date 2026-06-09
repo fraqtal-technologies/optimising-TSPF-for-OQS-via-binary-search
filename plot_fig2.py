@@ -9,14 +9,14 @@ from matplotlib.ticker import LogLocator, LogFormatterSciNotation
 
 ROOT = os.path.dirname(__file__)
 RESULTS_PATH = os.path.join(ROOT, "results", "data", "results_xx_chain.json")
-OUTPUT_PATH = os.path.join(ROOT, "results", "figures", "fig2.png")
+OUTPUT_PATH = os.path.join(ROOT, "results", "figures", "Fig2.png")
 REFERENCE_M_VALUES = [7, 9, 11, 13, 15, 17, 19]
 TITLE_FONTSIZE = 18
 LABEL_FONTSIZE = 16
 TICK_FONTSIZE = 13
 LEGEND_FONTSIZE = 11
 PANEL_LABEL_FONTSIZE = 20
-Y_AXIS_LABEL = r"Trotter steps $N$ and gate complexity $g$ (log scale)"
+Y_AXIS_LABEL = r"Trotter Steps $N$ and Gate Complexity $g$ (Log Scale)"
 
 
 def _extract_series(rows, method_key, value_key):
@@ -86,7 +86,7 @@ def _plot_method_subplot(ax, rows, method_key, title):
     )
 
     ax.set_title(title, fontsize=TITLE_FONTSIZE)
-    ax.set_xlabel("Number of Liouvillian terms, $M$", fontsize=LABEL_FONTSIZE)
+    ax.set_xlabel("Number of Liouvillian Terms, $M$", fontsize=LABEL_FONTSIZE)
     ax.set_xticks(m_values)
     ax.tick_params(axis="both", labelsize=TICK_FONTSIZE)
 
@@ -141,11 +141,13 @@ def main():
     fig.subplots_adjust(left=0.08, right=0.98, top=0.93, bottom=0.10, hspace=0.42, wspace=0.25)
     fig.savefig(OUTPUT_PATH, dpi=300)
 
+    params = payload["params"]
     print(f"Wrote {OUTPUT_PATH}")
     print(
-        "The number of Trotter steps, N, and gate complexities, g, required by each method "
+        "The number of Trotter Steps, N, and Gate Complexities, g, required by each method "
         "for the XX-Spin Chain model with varying M, the number of terms in the model's "
-        "Liouvillian generator. Parameters: lambda = 8.119, epsilon = 10^-3, t = 2."
+        f"Liouvillian generator. Parameters: lambda = {params['lam']:.4f}, "
+        f"epsilon = {params['epsilon']:g}, t = {params['t']:g}."
     )
 
 

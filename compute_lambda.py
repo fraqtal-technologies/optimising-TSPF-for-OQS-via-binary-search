@@ -77,27 +77,27 @@ def build_local_matrices_tfim(n_spins, J=1.0, h=0.5, gamma=0.1):
     return terms
 
 
-def compute_lambda(local_terms):
+def compute_lambda(local_terms, verbose=True):
     lam = 0.0
     for mat, d_local, label in local_terms:
         bound, is_exact = diamond_norm_bound(mat, d_local)
-        exact_str = "exact" if is_exact else "upper bound"
-        print(f"  {label:40s} ||L_k||_diamond = {bound:.6f} ({exact_str})")
+        if verbose:
+            exact_str = "exact" if is_exact else "upper bound"
+            print(f"  {label:40s} ||L_k||_diamond = {bound:.6f} ({exact_str})")
         lam = max(lam, bound)
-    print(f"  lambda = {lam:.6f}")
+    if verbose:
+        print(f"  lambda = {lam:.6f}")
     return lam
 
 
 if __name__ == "__main__":
     print("=" * 60)
     print("XX-Spin Chain (P=2, Omega=3.94, gamma=0.31)")
-    print("Target: lambda = 8.119")
     print("=" * 60)
     lam_xx = compute_lambda(build_local_matrices_xx(P=2, Omega=3.94, gamma=0.31))
     print()
 
     print("=" * 60)
     print("TFIM (n_spins=2, J=1, h=0.5, gamma=0.1)")
-    print("Target: lambda = 4.00")
     print("=" * 60)
     lam_tfim = compute_lambda(build_local_matrices_tfim(n_spins=2, J=1.0, h=0.5, gamma=0.1))

@@ -1,7 +1,7 @@
 [project]
 name = "optimising-tspf-for-oqs-via-binary-search"
 version = "0.1.0"
-description = "Add your description here"
+description = "Code accompanying research on optimising Trotter-Suzuki product formulas for open quantum systems via binary search"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

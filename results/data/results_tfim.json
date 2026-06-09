@@ -3,7 +3,7 @@
   "params": {
     "t": 5.0,
     "epsilon": 1e-05,
-    "lam": 4.0,
+    "lam": 8.000000000000002,
     "J": 1.0,
     "h": 0.5,
     "gamma": 0.1
@@ -14,28 +14,28 @@
       "M": 5,
       "methods": {
         "det1": {
-          "N_analytic": 2718281829,
-          "N_min": 1000000100,
-          "g_analytic": 13591409145,
-          "g_min": 5000000500
+          "N_analytic": 10873127314,
+          "N_min": 4000000200,
+          "g_analytic": 54365636570,
+          "g_min": 20000001000
         },
         "ran1": {
-          "N_analytic": 301014,
-          "N_min": 182625,
-          "g_analytic": 1505070,
-          "g_min": 913125
+          "N_analytic": 851397,
+          "N_min": 516498,
+          "g_analytic": 4256985,
+          "g_min": 2582490
         },
         "det2": {
-          "N_analytic": 301014,
-          "N_min": 182625,
-          "g_analytic": 3010140,
-          "g_min": 1826250
+          "N_analytic": 851397,
+          "N_min": 516498,
+          "g_analytic": 8513970,
+          "g_min": 5164980
         },
         "ran2": {
-          "N_analytic": 233165,
-          "N_min": 141472,
-          "g_analytic": 2331650,
-          "g_min": 1414720
+          "N_analytic": 659489,
+          "N_min": 400100,
+          "g_analytic": 6594890,
+          "g_min": 4001000
         }
       }
     },
@@ -44,28 +44,28 @@
       "M": 8,
       "methods": {
         "det1": {
-          "N_analytic": 6958801481,
-          "N_min": 2560000160,
-          "g_analytic": 55670411848,
-          "g_min": 20480001280
+          "N_analytic": 27835205924,
+          "N_min": 10240000320,
+          "g_analytic": 222681647392,
+          "g_min": 81920002560
         },
         "ran1": {
-          "N_analytic": 609210,
-          "N_min": 369585,
-          "g_analytic": 4873680,
-          "g_min": 2956680
+          "N_analytic": 1723105,
+          "N_min": 1045276,
+          "g_analytic": 13784840,
+          "g_min": 8362208
         },
         "det2": {
-          "N_analytic": 609210,
-          "N_min": 369585,
-          "g_analytic": 9747360,
-          "g_min": 5913360
+          "N_analytic": 1723105,
+          "N_min": 1045276,
+          "g_analytic": 27569680,
+          "g_min": 16724416
         },
         "ran2": {
-          "N_analytic": 373064,
-          "N_min": 226355,
-          "g_analytic": 5969024,
-          "g_min": 3621680
+          "N_analytic": 1055182,
+          "N_min": 640160,
+          "g_analytic": 16882912,
+          "g_min": 10242560
         }
       }
     },
@@ -74,28 +74,28 @@
       "M": 12,
       "methods": {
         "det1": {
-          "N_analytic": 15657303332,
-          "N_min": 5760000240,
-          "g_analytic": 187887639984,
-          "g_min": 69120002880
+          "N_analytic": 62629213328,
+          "N_min": 23040000481,
+          "g_analytic": 751550559936,
+          "g_min": 276480005772
         },
         "ran1": {
-          "N_analytic": 1119190,
-          "N_min": 678943,
-          "g_analytic": 13430280,
-          "g_min": 8147316
+          "N_analytic": 3165545,
+          "N_min": 1920240,
+          "g_analytic": 37986540,
+          "g_min": 23042880
         },
         "det2": {
-          "N_analytic": 1119190,
-          "N_min": 678943,
-          "g_analytic": 26860560,
-          "g_min": 16294632
+          "N_analytic": 3165545,
+          "N_min": 1920240,
+          "g_analytic": 75973080,
+          "g_min": 46085760
         },
         "ran2": {
-          "N_analytic": 559595,
-          "N_min": 339532,
-          "g_analytic": 13430280,
-          "g_min": 8148768
+          "N_analytic": 1582773,
+          "N_min": 960240,
+          "g_analytic": 37986552,
+          "g_min": 23045760
         }
       }
     },
@@ -104,28 +104,28 @@
       "M": 15,
       "methods": {
         "det1": {
-          "N_analytic": 24464536457,
-          "N_min": 9000000300,
-          "g_analytic": 366968046855,
-          "g_min": 135000004500
+          "N_analytic": 97858145825,
+          "N_min": 36000000600,
+          "g_analytic": 1467872187375,
+          "g_min": 540000009000
         },
         "ran1": {
-          "N_analytic": 1564115,
-          "N_min": 948834,
-          "g_analytic": 23461725,
-          "g_min": 14232510
+          "N_analytic": 4423984,
+          "N_min": 2683582,
+          "g_analytic": 66359760,
+          "g_min": 40253730
         },
         "det2": {
-          "N_analytic": 1564115,
-          "N_min": 948834,
-          "g_analytic": 46923450,
-          "g_min": 28465020
+          "N_analytic": 4423984,
+          "N_min": 2683582,
+          "g_analytic": 132719520,
+          "g_min": 80507460
         },
         "ran2": {
-          "N_analytic": 699494,
-          "N_min": 424415,
-          "g_analytic": 20984820,
-          "g_min": 12732450
+          "N_analytic": 1978466,
+          "N_min": 1200300,
+          "g_analytic": 59353980,
+          "g_min": 36009000
         }
       }
     },
@@ -134,28 +134,28 @@
       "M": 19,
       "methods": {
         "det1": {
-          "N_analytic": 39251989603,
-          "N_min": 14440000380,
-          "g_analytic": 745787802457,
-          "g_min": 274360007220
+          "N_analytic": 157007958412,
+          "N_min": 57760000760,
+          "g_analytic": 2983151209828,
+          "g_min": 1097440014440
         },
         "ran1": {
-          "N_analytic": 2229780,
-          "N_min": 1352620,
-          "g_analytic": 42365820,
-          "g_min": 25699780
+          "N_analytic": 6306771,
+          "N_min": 3825630,
+          "g_analytic": 119828649,
+          "g_min": 72686970
         },
         "det2": {
-          "N_analytic": 2229780,
-          "N_min": 1352620,
-          "g_analytic": 84731640,
-          "g_min": 51399560
+          "N_analytic": 6306771,
+          "N_min": 3825630,
+          "g_analytic": 239657298,
+          "g_min": 145373940
         },
         "ran2": {
-          "N_analytic": 886025,
-          "N_min": 537592,
-          "g_analytic": 33668950,
-          "g_min": 20428496
+          "N_analytic": 2506057,
+          "N_min": 1520380,
+          "g_analytic": 95230166,
+          "g_min": 57774440
         }
       }
     }

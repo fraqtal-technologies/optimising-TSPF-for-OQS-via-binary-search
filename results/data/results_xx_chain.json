@@ -3,7 +3,7 @@
   "params": {
     "t": 2.0,
     "epsilon": 0.001,
-    "lam": 8.119,
+    "lam": 7.071067844921239,
     "Omega": 3.94,
     "gamma": 0.31
   },
@@ -13,28 +13,28 @@
       "M": 7,
       "methods": {
         "det1": {
-          "N_analytic": 35120092,
-          "N_min": 12920074,
-          "g_analytic": 245840644,
-          "g_min": 90440518
+          "N_analytic": 26639163,
+          "N_min": 9800100,
+          "g_analytic": 186474141,
+          "g_min": 68600700
         },
         "ran1": {
-          "N_analytic": 36479,
-          "N_min": 22182,
-          "g_analytic": 255353,
-          "g_min": 155274
+          "N_analytic": 29649,
+          "N_min": 18033,
+          "g_analytic": 207543,
+          "g_min": 126231
         },
         "det2": {
-          "N_analytic": 36479,
-          "N_min": 22182,
-          "g_analytic": 510706,
-          "g_min": 310548
+          "N_analytic": 29649,
+          "N_min": 18033,
+          "g_analytic": 415086,
+          "g_min": 252462
         },
         "ran2": {
-          "N_analytic": 23881,
-          "N_min": 14541,
-          "g_analytic": 334334,
-          "g_min": 203574
+          "N_analytic": 19410,
+          "N_min": 11822,
+          "g_analytic": 271740,
+          "g_min": 165508
         }
       }
     },
@@ -43,28 +43,28 @@
       "M": 9,
       "methods": {
         "det1": {
-          "N_analytic": 58055662,
-          "N_min": 21357631,
-          "g_analytic": 522500958,
-          "g_min": 192218679
+          "N_analytic": 44036167,
+          "N_min": 16200128,
+          "g_analytic": 396325503,
+          "g_min": 145801152
         },
         "ran1": {
-          "N_analytic": 53181,
-          "N_min": 32329,
-          "g_analytic": 478629,
-          "g_min": 290961
+          "N_analytic": 43224,
+          "N_min": 26281,
+          "g_analytic": 389016,
+          "g_min": 236529
         },
         "det2": {
-          "N_analytic": 53181,
-          "N_min": 32329,
-          "g_analytic": 957258,
-          "g_min": 581922
+          "N_analytic": 43224,
+          "N_min": 26281,
+          "g_analytic": 778032,
+          "g_min": 473058
         },
         "ran2": {
-          "N_analytic": 30704,
-          "N_min": 18696,
-          "g_analytic": 552672,
-          "g_min": 336528
+          "N_analytic": 24956,
+          "N_min": 15200,
+          "g_analytic": 449208,
+          "g_min": 273600
         }
       }
     },
@@ -73,28 +73,28 @@
       "M": 11,
       "methods": {
         "det1": {
-          "N_analytic": 86725124,
-          "N_min": 31904569,
-          "g_analytic": 953976364,
-          "g_min": 350950259
+          "N_analytic": 65782421,
+          "N_min": 24200156,
+          "g_analytic": 723606631,
+          "g_min": 266201716
         },
         "ran1": {
-          "N_analytic": 71858,
-          "N_min": 43674,
-          "g_analytic": 790438,
-          "g_min": 480414
+          "N_analytic": 58405,
+          "N_min": 35502,
+          "g_analytic": 642455,
+          "g_min": 390522
         },
         "det2": {
-          "N_analytic": 71858,
-          "N_min": 43674,
-          "g_analytic": 1580876,
-          "g_min": 960828
+          "N_analytic": 58405,
+          "N_min": 35502,
+          "g_analytic": 1284910,
+          "g_min": 781044
         },
         "ran2": {
-          "N_analytic": 37527,
-          "N_min": 22851,
-          "g_analytic": 825594,
-          "g_min": 502722
+          "N_analytic": 30501,
+          "N_min": 18578,
+          "g_analytic": 671022,
+          "g_min": 408716
         }
       }
     },
@@ -103,28 +103,28 @@
       "M": 13,
       "methods": {
         "det1": {
-          "N_analytic": 121128479,
-          "N_min": 44560888,
-          "g_analytic": 1574670227,
-          "g_min": 579291544
+          "N_analytic": 91877927,
+          "N_min": 33800185,
+          "g_analytic": 1194413051,
+          "g_min": 439402405
         },
         "ran1": {
-          "N_analytic": 92321,
-          "N_min": 56101,
-          "g_analytic": 1200173,
-          "g_min": 729313
+          "N_analytic": 75037,
+          "N_min": 45604,
+          "g_analytic": 975481,
+          "g_min": 592852
         },
         "det2": {
-          "N_analytic": 92321,
-          "N_min": 56101,
-          "g_analytic": 2400346,
-          "g_min": 1458626
+          "N_analytic": 75037,
+          "N_min": 45604,
+          "g_analytic": 1950962,
+          "g_min": 1185704
         },
         "ran2": {
-          "N_analytic": 44350,
-          "N_min": 27005,
-          "g_analytic": 1153100,
-          "g_min": 702130
+          "N_analytic": 36047,
+          "N_min": 21956,
+          "g_analytic": 937222,
+          "g_min": 570856
         }
       }
     },
@@ -133,28 +133,28 @@
       "M": 15,
       "methods": {
         "det1": {
-          "N_analytic": 161265726,
-          "N_min": 59326589,
-          "g_analytic": 2418985890,
-          "g_min": 889898835
+          "N_analytic": 122322684,
+          "N_min": 45000213,
+          "g_analytic": 1834840260,
+          "g_min": 675003195
         },
         "ran1": {
-          "N_analytic": 114426,
-          "N_min": 69525,
-          "g_analytic": 1716390,
-          "g_min": 1042875
+          "N_analytic": 93003,
+          "N_min": 56516,
+          "g_analytic": 1395045,
+          "g_min": 847740
         },
         "det2": {
-          "N_analytic": 114426,
-          "N_min": 69525,
-          "g_analytic": 3432780,
-          "g_min": 2085750
+          "N_analytic": 93003,
+          "N_min": 56516,
+          "g_analytic": 2790090,
+          "g_min": 1695480
         },
         "ran2": {
-          "N_analytic": 51173,
-          "N_min": 31160,
-          "g_analytic": 1535190,
-          "g_min": 934800
+          "N_analytic": 41593,
+          "N_min": 25333,
+          "g_analytic": 1247790,
+          "g_min": 759990
         }
       }
     },
@@ -163,28 +163,28 @@
       "M": 17,
       "methods": {
         "det1": {
-          "N_analytic": 207136865,
-          "N_min": 76201671,
-          "g_analytic": 3521326705,
-          "g_min": 1295428407
+          "N_analytic": 157116692,
+          "N_min": 57800241,
+          "g_analytic": 2670983764,
+          "g_min": 982604097
         },
         "ran1": {
-          "N_analytic": 138058,
-          "N_min": 83874,
-          "g_analytic": 2346986,
-          "g_min": 1425858
+          "N_analytic": 112211,
+          "N_min": 68180,
+          "g_analytic": 1907587,
+          "g_min": 1159060
         },
         "det2": {
-          "N_analytic": 138058,
-          "N_min": 83874,
-          "g_analytic": 4693972,
-          "g_min": 2851716
+          "N_analytic": 112211,
+          "N_min": 68180,
+          "g_analytic": 3815174,
+          "g_min": 2318120
         },
         "ran2": {
-          "N_analytic": 57996,
-          "N_min": 35314,
-          "g_analytic": 1971864,
-          "g_min": 1200676
+          "N_analytic": 47138,
+          "N_min": 28711,
+          "g_analytic": 1602692,
+          "g_min": 976174
         }
       }
     },
@@ -193,28 +193,28 @@
       "M": 19,
       "methods": {
         "det1": {
-          "N_analytic": 258741898,
-          "N_min": 95186134,
-          "g_analytic": 4916096062,
-          "g_min": 1808536546
+          "N_analytic": 196259950,
+          "N_min": 72200270,
+          "g_analytic": 3728939050,
+          "g_min": 1371805130
         },
         "ran1": {
-          "N_analytic": 163124,
-          "N_min": 99094,
-          "g_analytic": 3099356,
-          "g_min": 1882786
+          "N_analytic": 132584,
+          "N_min": 80551,
+          "g_analytic": 2519096,
+          "g_min": 1530469
         },
         "det2": {
-          "N_analytic": 163124,
-          "N_min": 99094,
-          "g_analytic": 6198712,
-          "g_min": 3765572
+          "N_analytic": 132584,
+          "N_min": 80551,
+          "g_analytic": 5038192,
+          "g_min": 3060938
         },
         "ran2": {
-          "N_analytic": 64819,
-          "N_min": 39469,
-          "g_analytic": 2463122,
-          "g_min": 1499822
+          "N_analytic": 52684,
+          "N_min": 32089,
+          "g_analytic": 2001992,
+          "g_min": 1219382
         }
       }
     }
