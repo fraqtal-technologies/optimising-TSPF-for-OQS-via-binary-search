@@ -2,7 +2,7 @@
 
 Code accompanying the manuscript:
 
-> **Optimizing Gate Complexities Using Classical Search**
+> **Optimizing Gate Complexities Using Classical Search**  
 > — numerical reproduction of the Trotter-step and gate-complexity bounds for open
 > quantum system simulation using deterministic and randomised Trotter-Suzuki product
 > formulas (TS-PF).
@@ -22,30 +22,64 @@ the code computes:
    J. Math. Phys. 59, 052201, 2018). Each term is 1- or 2-local, so the Choi matrix
    is constructed only on the local subsystem, making the computation independent of
    system size.
-2. **Analytic Trotter-step bounds** (N_analytic) and the corresponding gate complexities.
-3. **Empirically minimal Trotter-step counts** (N_min) via binary search on the precision
-   function, and the corresponding gate complexities.
+2. **Analytic Trotter-step bounds** (N_analytic) and corresponding gate complexities.
+3. **Empirically minimal Trotter-step counts** (N_min) via binary search on the
+   precision function, and corresponding gate complexities.
+
+## Code Flow
+
+The pipeline runs in four stages:
+
+```
+models/diamond_norm_bound.py          models/tfim_lattice.py
+         |                                     |
+         └──────────────┬──────────────────────┘
+                        ↓
+               compute_lambda.py
+               (λ = max_k ‖L_k‖◇)
+                        |
+                        └──────────────────────┐
+                                               ↓
+computing_bounds/analytic_bounds.py   compute_bounds.py
+computing_bounds/error_functions.py   (N_analytic, N_min,
+computing_bounds/binary_search.py  →   gate complexities)
+                                               |
+                              ┌────────────────┼────────────────┐
+                              ↓                ↓                ↓
+                  results/data/          results/data/    (read by plots)
+                  results_xx_chain.json  results_tfim.json
+                              |                |
+              ┌───────────────┼────────────────┘
+              ↓               ↓               ↓
+       plot_tfim_couplings  plot_fig2.py   plot_fig3.py
+       (Fig1.png)           (Fig2.png)     (Fig3.png)
+```
+
+**Fig1** (lattice architecture) is λ-independent — it reads only from
+`models/tfim_lattice.py` and does not require running `compute_bounds.py` first.
+
+**Fig2** and **Fig3** read from the JSON datasets produced by `compute_bounds.py`.
 
 ## Repository Structure
 
 ```
 .
 ├── models/
-│   ├── diamond_norm_bound.py   # Nechita et al. CJ-matrix diamond-norm bound
-│   ├── xx_spin_chain.py        # XX-chain Liouvillian builder
-│   └── tfim_lattice.py         # TFIM Liouvillian builder and lattice connectivity
-├── computing-bounds/
-│   ├── analytic_bounds.py      # Analytic N upper bounds (Propositions 2–5)
-│   ├── error_functions.py      # Precision functions epsilon_hat for each method
-│   └── binary_search_methods.py
-├── compute_lambda.py           # Compute lambda = max_k ||L_k||_diamond
-├── compute_bounds.py           # Generate bound datasets (writes results/data/)
-├── plot_fig2.py                # Figure 2: XX-spin chain bounds
-├── plot_fig3.py                # Figure 3: TFIM bounds
-├── plot_tfim_couplings.py      # Figure 1: TFIM lattice architectures
+│   ├── diamond_norm_bound.py    # Nechita et al. CJ-matrix diamond-norm bound
+│   ├── xx_spin_chain.py         # XX-chain full Liouvillian builder
+│   └── tfim_lattice.py          # TFIM Liouvillian builder and lattice connectivity
+├── computing_bounds/
+│   ├── analytic_bounds.py       # Analytic N upper bounds (Propositions 2–5)
+│   ├── error_functions.py       # Precision functions epsilon_hat (Table 1)
+│   └── binary_search_methods.py # Minimum-N search (Algorithm 1)
+├── compute_lambda.py            # Compute λ = max_k ‖L_k‖◇ for each model
+├── compute_bounds.py            # Generate N_analytic, N_min, gate complexities
+├── plot_tfim_couplings.py       # Figure 1: TFIM lattice architectures
+├── plot_fig2.py                 # Figure 2: XX-spin chain bounds
+├── plot_fig3.py                 # Figure 3: TFIM bounds
 └── results/
-    ├── data/                   # JSON datasets used for plotting
-    └── figures/                # Rendered figures (Fig1.png, Fig2.png, Fig3.png)
+    ├── data/                    # JSON datasets (output of compute_bounds.py)
+    └── figures/                 # Rendered figures (Fig1.png, Fig2.png, Fig3.png)
 ```
 
 ## Environment and Dependencies
@@ -72,7 +106,7 @@ Or with pip:
 pip install -r requirements.txt
 ```
 
-### 2) Compute lambda
+### 2) Compute λ (optional diagnostic)
 
 ```bash
 uv run python compute_lambda.py
@@ -94,23 +128,23 @@ Outputs:
 ### 4) Generate figures
 
 ```bash
-uv run python plot_tfim_couplings.py   # Figure 1
-uv run python plot_fig2.py             # Figure 2
-uv run python plot_fig3.py             # Figure 3
+uv run python plot_tfim_couplings.py   # Figure 1 (no compute_bounds.py needed)
+uv run python plot_fig2.py             # Figure 2 (requires step 3)
+uv run python plot_fig3.py             # Figure 3 (requires step 3)
 ```
 
 Outputs: `results/figures/Fig1.png`, `Fig2.png`, `Fig3.png`.
 
 ## Reproducibility Notes
 
-- λ is computed from the model, not hard-coded. Running `compute_bounds.py` always
-  recomputes λ before generating results.
-- Gate-complexity formulas follow Table 1 of the manuscript: `MN` for first-order
-  methods and `2MN` for second-order methods.
-- TFIM lattice connectivity is defined in `models/tfim_lattice.py`; the number of
-  terms M is derived from connectivity rather than hard-coded.
+- λ is computed from the model at runtime — not hard-coded. `compute_bounds.py`
+  always recomputes λ before generating results.
+- Gate-complexity formulas follow Table 1 of the manuscript: `M*N` for first-order
+  methods and `2*M*N` for second-order methods.
+- TFIM lattice connectivity is defined in `models/tfim_lattice.py`; M is derived
+  from connectivity rather than hard-coded.
 - Plot scripts print parameter values (λ, ε, t) read directly from the JSON output,
-  so printed captions always reflect the data actually plotted.
+  so printed captions always match the data actually plotted.
 
 ## Citation
 
